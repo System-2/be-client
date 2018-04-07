@@ -1,16 +1,41 @@
 {
   "name": "be-client",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+  "author": "warlock1607",
+  "description": "client for block explorer",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/System-2/be-client.git"
+  },
+  "homepage": "https://github.com/System-2/be-client#readme",
+  "bugs": {
+    "url": "https://github.com/System-2/be-client/issues"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "materialize-css": "^1.0.0-beta",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-jss": "^8.4.0",
+    "react-materialize": "^2.1.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.9.1"
+  },
+  "devDependencies": {}
 }
