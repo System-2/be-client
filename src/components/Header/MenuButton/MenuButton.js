@@ -1,6 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import './MenuButton.css'
 
+
+const MenuButton = ({open, onClick }) => (
+    <div
+        className="menu"
+        onClick={onClick}
+    >
+        <div className={"hambergerIcon "+ open}>
+        </div>
+    </div>
+)
+
+MenuButton.propTypes = {
+    open: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired
+}
+
+/*
 class MenuButton extends Component {
     constructor(props) {
         super(props);
@@ -10,9 +28,7 @@ class MenuButton extends Component {
 
     click(){
         let className = (this.state.open==="")?"open":"";
-        this.setState({open: className});
-    }
-
+        this.setState({open: className});}
     render() {
         return (
             <div
@@ -25,5 +41,5 @@ class MenuButton extends Component {
         )
     }
 }
-
+*/
 export default MenuButton

@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import injectSheet from 'react-jss'
 
-import MenuButton from './MenuButton/MenuButton'
+import MenuButton from '../../containers/MenuButton'
+
+//import MenuButton from './MenuButton/MenuButton'
 
 const styles = {
     nav: {
@@ -27,19 +29,21 @@ const styles = {
         justifyContent: 'flex-end'
     }
 }
-const Nav = ({classes, children, path}) => (
+
+const Nav = ({classes, children, menutrigger}) => (
     <div className={classes.container}>
         <div className={classes.nav}>
             {children}
         </div>
         <div className={classes.navMenuBtn}>
-            <MenuButton/>
+            <MenuButton menu={menutrigger}/>
         </div>
     </div>
 
 )
 
 Nav.propTypes = {
+    menutrigger: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
 }
 

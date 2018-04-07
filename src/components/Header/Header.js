@@ -1,7 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 
-import Nav from './Nav'
+import Nav from '../../containers/Nav'
 import LangPanel from './LangPanel'
 import Label from './Label'
 import NavPanel from './NavPanel'
