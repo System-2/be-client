@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+/*
 const Block= () => (
     <tr>
         <td>1</td>
@@ -10,7 +10,7 @@ const Block= () => (
 )
 
 
-/*
+*/
 class Block extends Component {
 
     constructor(props) {
@@ -20,9 +20,9 @@ class Block extends Component {
         };
     }
 
-    async loadData() {
+    loadData() {
         this.setState({
-            data: await fetch("/api/teams/3").then(response =>response.json())
+            data: fetch("https://api.opendota.com/api/teams/3").then(response =>response.json())
         })
     }
 
@@ -41,5 +41,5 @@ class Block extends Component {
         );
     }
 }
-*/
+
 export default Block
