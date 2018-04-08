@@ -1,44 +1,96 @@
 import React, { Component } from 'react'
+import './Table.css'
+import { Table } from 'react-bootstrap'
 
-const Block= () => (
-    <tr>
-        <td>1</td>
-        <td>Vova</td>
-        <td>Zhelvis</td>
-        <td>@zhel</td>
-    </tr>
-)
+import axios from 'axios';
 
-
-/*
 class Block extends Component {
-
     constructor(props) {
         super(props);
+
         this.state = {
-            data: []
+            posts: []
         };
     }
 
-    async loadData() {
-        this.setState({
-            data: await fetch("/api/teams/3").then(response =>response.json())
-        })
-    }
-
     componentDidMount() {
-        this.loadData();
+        axios.get('http://localhost:13445/api/v1/txns/20/1').then(res => {
+                const posts = res.data;
+                this.setState({ posts });
+            });
     }
 
-    render(){
-        return(
-        <tr>
-            <td>{this.state.data.id}</td>
-            <td>{this.state.data.deaths}</td>
-            <td>{this.state.data.kills}</td>
-            <td>{this.state.data.assists}</td>
-        </tr>
+    render() {
+        const data = this.state.posts;
+
+        let tableTemplate;
+
+        function makeColumns(block) {
+            return<React.Fragment>
+                    <td>{block.txn}</td>
+                    <td>{block.block}</td>
+                    <td>{block.from}</td>
+                    <td>{block.to}</td>
+                    <td>{block.value}</td>
+                </React.Fragment>
+        }
+
+        tableTemplate = data.map((row, i) => {
+            return <tr key={i}>{makeColumns(row)}</tr>
+        })
+
+        return (
+            <div className={"table-container"}>
+                <Table className={"block-table"} striped bordered condensed hover>
+                    <thead>
+                    <tr>
+                        <th>txn</th>
+                        <th>block</th>
+                        <th>from</th>
+                        <th>to</th>
+                        <th>value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      {tableTemplate}
+                    </tbody>
+                </Table>
+
+            </div>
         );
+    }
+}
+/*
+export class Block extends Component {
+
+    componentWillMount() {
+        this.props.fetchBlock()
+    }
+
+    renderBlock(block) {
+        return (
+            <tr>
+                <td>{block.txn}</td>
+                <td>{block.block}</td>
+                <td>{block.from}</td>
+                <td>{block.to}</td>
+                <td>{block.value}</td>
+            </tr>
+        );
+    }
+
+    render() {
+        let {block} = this.props;
+        if (block.isFetching == true) {
+            return <p>Loading</p>
+        }
+        else if (block.isFetching == false && block.Array.length >= 1) {
+            return (
+                <div>
+                    {block.Array.map(this.renderBlock)}
+                </div>
+            )
+        }
     }
 }
 */
