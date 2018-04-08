@@ -18,7 +18,10 @@ const styles = {
         },
         '&:focus':{
             outline: 'none',
-        }
+        },
+        '@media screen and (max-width:  1224px)':{
+            fontSize: 20,
+        },
     },
 
 }

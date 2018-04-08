@@ -4,11 +4,20 @@ import injectSheet from 'react-jss'
 
 const styles = {
     container:{
-        flexBasis: '20%',
+        flexBasis: '30%',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        height: 70
+        height: 70,
+        '@media screen and (max-width:  768px)':{
+            flexBasis: '40%',
+        },
+        '@media screen and (max-width:  630px)':{
+            flexBasis: '50%',
+        },
+        '@media screen and (max-width:  546px)':{
+            display: 'none',
+        },
     }
 }
 

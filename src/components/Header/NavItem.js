@@ -17,7 +17,11 @@ const styles = {
         transition: 'background-color 0.4s ease',
         '&:hover': {
             background: '#949494'
-        }
+        },
+        '@media screen and (max-width:  1224px)':{
+            height: 60,
+            fontSize: 15,
+        },
     }
 }
 const NavItem = ({classes, children, path}) => (

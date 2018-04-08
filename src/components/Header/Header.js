@@ -16,14 +16,23 @@ const styles = {
         justifyContent: 'flex-start',
         alignItems: 'center',
         height: 70,
-        paddingLeft: '10%',
-        paddingRight: '10%'
+        paddingLeft: '3%',
+        paddingRight: '10%',
+        '@media screen and (max-width:  1224px)':{
+            height: 60,
+        },
+        '@media screen and (max-width:  546px)':{
+            justifyContent: 'flex-end',
+        },
     },
     title: {
         color: 'white',
         fontSize: 30,
         margin: 0,
-    }
+        '@media screen and (max-width:  1224px)':{
+            fontSize: 20,
+        },
+    },
 }
 
 const Header = ({classes}) => (
@@ -31,7 +40,7 @@ const Header = ({classes}) => (
         <div className={classes.header}>
             <Label>
                 <p className={classes.title}>
-                    LOGO
+                    BLOCK EXPLORER
                 </p>
             </Label>
             <Nav>
