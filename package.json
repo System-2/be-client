@@ -20,6 +20,8 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "history": "^4.7.2",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
@@ -33,7 +35,9 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.1",
     "redux": "^3.7.2",
-    "redux-persist": "^5.9.1"
+    "redux-axios-middleware": "^4.0.0",
+    "redux-persist": "^5.9.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {}
 }
