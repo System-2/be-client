@@ -1,11 +1,17 @@
 @import "./bootstrap/css/bootstrap.min.css";
 
-.table-container{
-    padding-left: 7%;
-    padding-right: 7%;
+.table-container {
+    width: 100%;
+    padding-top: 3%;
+    overflow:  scroll;
 }
 
 .block-table {
+    table-layout: auto;
     width: 100%;
+}
+
+.block-elem td{
+    overflow:  hidden;
 }
 
